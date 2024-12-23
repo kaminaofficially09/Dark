@@ -1,0 +1,19 @@
+image: python:3.10
+
+pipelines:
+  default:
+    - step:
+        name: Install Dependencies and Run Script
+        script:
+          - pip install telebot
+          - chmod +x *
+          - python3 dark.py
+    
+  branches:
+    main:
+      - step:
+          name: Deploy to Production (Example)
+          script:
+            - echo "Deploying to production"
+            # Add your production deployment steps here
+            - echo "Deployment complete"
